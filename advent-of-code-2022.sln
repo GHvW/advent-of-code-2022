@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NullableExtensions", "..\nu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Funk", "..\funk\src\Funk\Funk.csproj", "{84ACAE99-65F9-408B-8D97-A2A4A835F698}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elbaremune", "..\Elbaremune\src\Elbaremune\Elbaremune.csproj", "{6E31E55D-2545-491A-83F4-0492AA5A0BFF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elbaremune.Test", "..\Elbaremune\test\Elbaremune.Test\Elbaremune.Test.csproj", "{53745C80-8CE9-401A-A72D-4C284F84C179}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,14 @@ Global
 		{84ACAE99-65F9-408B-8D97-A2A4A835F698}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84ACAE99-65F9-408B-8D97-A2A4A835F698}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84ACAE99-65F9-408B-8D97-A2A4A835F698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E31E55D-2545-491A-83F4-0492AA5A0BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E31E55D-2545-491A-83F4-0492AA5A0BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E31E55D-2545-491A-83F4-0492AA5A0BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E31E55D-2545-491A-83F4-0492AA5A0BFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53745C80-8CE9-401A-A72D-4C284F84C179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53745C80-8CE9-401A-A72D-4C284F84C179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53745C80-8CE9-401A-A72D-4C284F84C179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53745C80-8CE9-401A-A72D-4C284F84C179}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
