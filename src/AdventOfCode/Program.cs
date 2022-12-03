@@ -11,4 +11,4 @@ Console.WriteLine("Hello, World!");
 //Day2.Day2Part2();
 
 Day3.RunPart1();
-//Day3.RunPart2();
+Day3.RunPart2();

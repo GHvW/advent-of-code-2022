@@ -20,6 +20,19 @@ public static class Day3 {
         Console.WriteLine(result);
     }
 
+
+    public static void RunPart2() {
+        var result =
+            File.ReadAllLines(@"../../../../../../advent-of-code-2022/input/day3.txt")
+                .Select(RucksackOps.Parse)
+                .Chunk(3)
+                .Select(Day3.ComputePriority2)
+                .Sum();
+
+        Console.WriteLine(result);
+    }
+
+
     public static Dictionary<char, int> Priorities =>
         "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
             .Zip(Enumerable.Range(1, 52))
@@ -27,7 +40,7 @@ public static class Day3 {
                 keySelector: it => it.First,
                 elementSelector: it => it.Second);
 
-    //public static int Priority(this char @this, )
+
     public static int ComputePriority(string items) {
         var c = 
             RucksackOps.Parse(items)
@@ -37,9 +50,30 @@ public static class Day3 {
         return Priorities
             .GetValueOrDefault(c);
     }
+
+
+    public static int ComputePriority2(Rucksack[] items) =>
+        Priorities
+            .GetValueOrDefault(Day3.FindBadge(items));
+
+
+    public static char FindBadge(Rucksack[] rucksacks) {
+
+        var first = rucksacks[0];
+        return first.CombineCompartments()
+            .FirstOrDefault(it =>
+                rucksacks[1]
+                    .CombineCompartments()
+                    .Contains(it) &&
+                rucksacks[2]
+                    .CombineCompartments()
+                    .Contains(it));
+    }
 }
 
+
 public record Rucksack(string FirstCompartment, string SecondCompartment);
+
 
 public static class RucksackOps {
 
@@ -51,20 +85,14 @@ public static class RucksackOps {
         return new Rucksack(firstCompartment, secondCompartment);
     }
 
+
     public static char? FindDuplicate(this Rucksack @this) =>
         @this
             .FirstCompartment
             .FirstOrDefault(@this.SecondCompartment.Contains);
+
+
+    public static string CombineCompartments(this Rucksack @this) => 
+        @this.FirstCompartment + @this.SecondCompartment;
 }
 
-public class PriorityScorer {
-
-    private readonly Dictionary<char, int> scoreTable;
-
-    public PriorityScorer(Dictionary<char, int> scoreTable) {
-        this.scoreTable = scoreTable;
-    }
-
-    public int? PriorityOf(char key) =>
-        this.scoreTable[key];
-}
