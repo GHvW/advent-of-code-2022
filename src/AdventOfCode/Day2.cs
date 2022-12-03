@@ -129,7 +129,6 @@ public static class GameRoundOps {
 }
 
 
-
 public enum PlayerCommand {
     Lose,
     Draw,
@@ -146,8 +145,6 @@ public static class PlayerCommandOps {
             "Z" => PlayerCommand.Win,
             _ => null
         };
-
-
 }
 
 
