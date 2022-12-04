@@ -1,11 +1,5 @@
 ﻿using Funk;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace AdventOfCode;
 
 public static class Day4 {
@@ -28,15 +22,18 @@ public static class Day4 {
         Console.WriteLine(result);
     }
 
+
     public static Func<string, int> Compute =
         new Func<string, (SectionAssignment, SectionAssignment)>(Day4.ParseAssignments)
             .AndThen(Fn.Tupled<SectionAssignment, SectionAssignment, bool>(SectionAssignmentOps.FullOverlapExistsWith))
             .AndThen((it) => it == true ? 1 : 0);
 
+
     public static Func<string, int> Compute2 =
         new Func<string, (SectionAssignment, SectionAssignment)>(Day4.ParseAssignments)
             .AndThen(Fn.Tupled<SectionAssignment, SectionAssignment, bool>(SectionAssignmentOps.OverlapExistsWith))
             .AndThen((it) => it == true ? 1 : 0);
+
 
     public static (SectionAssignment, SectionAssignment) ParseAssignments(string input) {
         var split = input.Split(',');
